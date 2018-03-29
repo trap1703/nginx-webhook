@@ -23,7 +23,7 @@ tar xzf ngx_devel_kit-${NGX_DEVKIT_VER}.tar.gz
 tar xzf nginx-${NGINX_VER}.tar.gz
 rm -f *.tar.gz
 
-cd LuaJIT-${LUAJIT_VER} && sudo make install && cd ..
+cd LuaJIT-${LUAJIT_VER} && make install && cd ..
 NGX_DEVKIT_PATH=$PWD/ngx_devel_kit-${NGX_DEVKIT_VER}
 LUA_MOD_PATH=$PWD/lua-nginx-module-${LUA_MOD_VER}
 
@@ -33,4 +33,4 @@ cd nginx-${NGINX_VER} && \
     --sbin-path=/usr/sbin/nginx --lock-path=/var/run/nginx/lock \
     --with-ld-opt='-Wl,-rpath,/usr/local/lib/lua' \
     --add-module=${NGX_DEVKIT_PATH} --add-module=${LUA_MOD_PATH} \
-    && make -j2 && sudo make install && ldconfig
+    && make -j2 && make install && ldconfig
