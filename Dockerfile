@@ -8,7 +8,7 @@ WORKDIR /opt/nginx
 ADD index.html /opt/nginx/html/
 ADD nginx.conf /opt/nginx/
 
-RUN systemctl reload nginx
+RUN nginx -V
 
 EXPOSE 80 443 8080
 
