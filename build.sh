@@ -1,7 +1,7 @@
 # add-apt-repository -y ppa:nginx/stable
 # sed -i '/deb-src/s/^# //g' /etc/apt/sources.list.d/nginx-stable-trusty.list # to get the nginx source 
 apt update
-apt install -y dpkg-dev libssl-dev libpcre3-dev gcc make zlib1g-dev
+apt install -y wget dpkg-dev libssl-dev libpcre3-dev gcc make zlib1g-dev
 
 NGINX_PATH='/opt/nginx'
 LUA_MOD_VER='0.10.11'
