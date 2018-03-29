@@ -5,6 +5,10 @@ ADD build.sh /tmp/
 RUN cd /tmp && sh /tmp/build.sh && rm -rf /tmp/*
 
 WORKDIR /opt/nginx
+ADD index.html /opt/nginx/html/
+ADD nginx.conf /opt/nginx/
+
+RUN systemctl reload nginx
 
 EXPOSE 80 443 8080
 
