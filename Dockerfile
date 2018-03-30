@@ -12,7 +12,8 @@ RUN nginx -V
 
 EXPOSE 80 443 8080
 
-VOLUME ["/var/log/nginx", "/var/www/html"]
+
+RUN /usr/sbin/nginx
 
 CMD sh
 #CMD ["nginx", "-g", "daemon off;"]
